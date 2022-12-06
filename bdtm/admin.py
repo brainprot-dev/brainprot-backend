@@ -1,0 +1,126 @@
+from django.contrib import admin
+
+
+# All Models
+from .als.models_als import *
+from .alzheimer.models_alzheimer import *
+from .ftld.models_ftld import *
+from .glioblastoma.models_glioblastoma import *
+from .glioma.models_glioma import *
+from .huntington.models_huntington import *
+from .medulloblastoma.models_medulloblastoma import *
+from .meningioma.models_meningiomas import *
+from .multiple_sclerosis.models_sclerosis import *
+from .parkinson.models_parkinson import *
+from .pituitary_adenoma.models_pituitary import *
+
+# All Admins
+from .als.admin_als import ALS_1_GSE19332_Admin, ALS_1_GSE19332_Metadata_Admin, ALS_2_GSE20589_Admin, ALS_2_GSE20589_Metadata_Admin, ALS_3_GSE68605_Admin, ALS_3_GSE68605_Metadata_Admin
+from .alzheimer.admin_alzheimer import Alzheimer_1_GSE12685_Admin, Alzheimer_1_GSE12685_Metadata_Admin, Alzheimer_2_GSE1297_Admin, Alzheimer_2_GSE1297_Metadata_Admin, Alzheimer_3_GSE28146_Admin, Alzheimer_3_GSE28146_Metadata_Admin, Alzheimer_4_GSE4757_Admin, Alzheimer_4_GSE4757_Metadata_Admin, Alzheimer_5_GSE16759_Admin, Alzheimer_5_GSE16759_Metadata_Admin, Alzheimer_6_GSE5281_Admin, Alzheimer_6_GSE5281_Metadata_Admin, Alzheimer_7_GSE48350_Admin, Alzheimer_7_GSE48350_Metadata_Admin
+from .ftld.admin_ftld import FTLD_1_GSE13162_Admin, FTLD_1_GSE13162_Metadata_Admin
+from .glioblastoma.admin_glioblastoma import Glioblastoma_1_GSE13276_Admin, Glioblastoma_1_GSE13276_Metadata_Admin
+from .glioma.admin_glioma import Glioma_1_GSE12657_Admin, Glioma_1_GSE12657_Metadata_Admin
+from .huntington.admin_huntington import Huntington_1_GSE3790_U133A_Admin, Huntington_1_GSE3790_U133A_Metadata_Admin, Huntington_2_GSE3790_U133B_Admin, Huntington_2_GSE3790_U133B_Metadata_Admin
+from .medulloblastoma.admin_medulloblastoma import Medulloblastoma_1_GSE62600_Admin, Medulloblastoma_1_GSE62600_Metadata_Admin
+from .meningioma.admin_meningiomas import Meningioma_1_GSE43290_Admin,  Meningioma_1_GSE43290_Metadata_Admin, Meningioma_2_GSE54934_Admin, Meningioma_2_GSE54934_Metadata_Admin
+from .multiple_sclerosis.admin_sclerosis import Multiple_Sclerosis_1_GSE38010_Admin, Multiple_Sclerosis_1_GSE38010_Metadata_Admin, Multiple_Sclerosis_2_GSE52139_Admin, Multiple_Sclerosis_2_GSE52139_Metadata_Admin, Multiple_Sclerosis_3_GSE83670_Admin, Multiple_Sclerosis_3_GSE83670_Metadata_Admin
+from .parkinson.admin_parkinson import Parkinson_1_GSE7621_Admin, Parkinson_1_GSE7621_Metadata_Admin, Parkinson_2_GSE8397_U133A_Admin, Parkinson_2_GSE8397_U133A_Metadata_Admin, Parkinson_3_GSE8397_U133B_Admin, Parkinson_3_GSE8397_U133B_Metadata_Admin, Parkinson_4_GSE19587_Admin, Parkinson_4_GSE19587_Metadata_Admin, Parkinson_5_GSE20141_Admin, Parkinson_5_GSE20141_Metadata_Admin, Parkinson_6_GSE20146_Admin, Parkinson_6_GSE20146_Metadata_Admin, Parkinson_7_GSE20163_Admin, Parkinson_7_GSE20163_Metadata_Admin, Parkinson_8_GSE20164_Admin, Parkinson_8_GSE20164_Metadata_Admin, Parkinson_9_GSE20168_Admin, Parkinson_9_GSE20168_Metadata_Admin, Parkinson_10_GSE20291_Admin, Parkinson_10_GSE20291_Metadata_Admin, Parkinson_11_GSE20292_Admin, Parkinson_11_GSE20292_Metadata_Admin, Parkinson_12_GSE20314_Admin, Parkinson_12_GSE20314_Metadata_Admin, Parkinson_13_GSE20333_Admin, Parkinson_13_GSE20333_Metadata_Admin, Parkinson_14_GSE24378_Admin, Parkinson_14_GSE24378_Metadata_Admin
+from .pituitary_adenoma.admin_pituitary import Pituitary_1_GSE36314_Admin, Pituitary_1_GSE36314_Metadata_Admin
+
+# als
+admin.site.register(ALS_1_GSE19332, ALS_1_GSE19332_Admin)
+admin.site.register(ALS_1_GSE19332_Metadata, ALS_1_GSE19332_Metadata_Admin)
+admin.site.register(ALS_2_GSE20589, ALS_2_GSE20589_Admin)
+admin.site.register(ALS_2_GSE20589_Metadata, ALS_2_GSE20589_Metadata_Admin)
+admin.site.register(ALS_3_GSE68605, ALS_3_GSE68605_Admin)
+admin.site.register(ALS_3_GSE68605_Metadata, ALS_3_GSE68605_Metadata_Admin)
+
+# alzheimer
+admin.site.register(Alzheimer_1_GSE12685, Alzheimer_1_GSE12685_Admin)
+admin.site.register(Alzheimer_1_GSE12685_Metadata, Alzheimer_1_GSE12685_Metadata_Admin)
+admin.site.register(Alzheimer_2_GSE1297, Alzheimer_2_GSE1297_Admin)
+admin.site.register(Alzheimer_2_GSE1297_Metadata, Alzheimer_2_GSE1297_Metadata_Admin)
+admin.site.register(Alzheimer_3_GSE28146, Alzheimer_3_GSE28146_Admin)
+admin.site.register(Alzheimer_3_GSE28146_Metadata, Alzheimer_3_GSE28146_Metadata_Admin)
+admin.site.register(Alzheimer_4_GSE4757, Alzheimer_4_GSE4757_Admin)
+admin.site.register(Alzheimer_4_GSE4757_Metadata, Alzheimer_4_GSE4757_Metadata_Admin)
+admin.site.register(Alzheimer_5_GSE16759, Alzheimer_5_GSE16759_Admin)
+admin.site.register(Alzheimer_5_GSE16759_Metadata, Alzheimer_5_GSE16759_Metadata_Admin)
+admin.site.register(Alzheimer_6_GSE5281, Alzheimer_6_GSE5281_Admin)
+admin.site.register(Alzheimer_6_GSE5281_Metadata, Alzheimer_6_GSE5281_Metadata_Admin)
+admin.site.register(Alzheimer_7_GSE48350, Alzheimer_7_GSE48350_Admin)
+admin.site.register(Alzheimer_7_GSE48350_Metadata, Alzheimer_7_GSE48350_Metadata_Admin)
+
+# ftld
+admin.site.register(FTLD_1_GSE13162, FTLD_1_GSE13162_Admin)
+admin.site.register(FTLD_1_GSE13162_Metadata, FTLD_1_GSE13162_Metadata_Admin)
+
+# glioblastoma
+admin.site.register(Glioblastoma_1_GSE13276, Glioblastoma_1_GSE13276_Admin)
+admin.site.register(Glioblastoma_1_GSE13276_Metadata, Glioblastoma_1_GSE13276_Metadata_Admin)
+
+# glioma
+admin.site.register(Glioma_1_GSE12657, Glioma_1_GSE12657_Admin)
+admin.site.register(Glioma_1_GSE12657_Metadata, Glioma_1_GSE12657_Metadata_Admin)
+
+# huntington
+admin.site.register(Huntington_1_GSE3790_U133A, Huntington_1_GSE3790_U133A_Admin)
+admin.site.register(Huntington_1_GSE3790_U133A_Metadata, Huntington_1_GSE3790_U133A_Metadata_Admin)
+admin.site.register(Huntington_2_GSE3790_U133B, Huntington_2_GSE3790_U133B_Admin)
+admin.site.register(Huntington_2_GSE3790_U133B_Metadata, Huntington_2_GSE3790_U133B_Metadata_Admin)
+
+# medulloblastoma
+admin.site.register(Medulloblastoma_1_GSE62600, Medulloblastoma_1_GSE62600_Admin)
+admin.site.register(Medulloblastoma_1_GSE62600_Metadata, Medulloblastoma_1_GSE62600_Metadata_Admin)
+
+# meningioma
+
+admin.site.register(Meningioma_1_GSE43290, Meningioma_1_GSE43290_Admin)
+admin.site.register(Meningioma_1_GSE43290_Metadata, Meningioma_1_GSE43290_Metadata_Admin)
+admin.site.register(Meningioma_2_GSE54934, Meningioma_2_GSE54934_Admin)
+admin.site.register(Meningioma_2_GSE54934_Metadata, Meningioma_2_GSE54934_Metadata_Admin)
+
+# multiple sclerosis
+admin.site.register(Multiple_Sclerosis_1_GSE38010, Multiple_Sclerosis_1_GSE38010_Admin)
+admin.site.register(Multiple_Sclerosis_1_GSE38010_Metadata, Multiple_Sclerosis_1_GSE38010_Metadata_Admin)
+admin.site.register(Multiple_Sclerosis_2_GSE52139, Multiple_Sclerosis_2_GSE52139_Admin)
+admin.site.register(Multiple_Sclerosis_2_GSE52139_Metadata, Multiple_Sclerosis_2_GSE52139_Metadata_Admin)
+admin.site.register(Multiple_Sclerosis_3_GSE83670, Multiple_Sclerosis_3_GSE83670_Admin)
+admin.site.register(Multiple_Sclerosis_3_GSE83670_Metadata, Multiple_Sclerosis_3_GSE83670_Metadata_Admin)
+
+# parkinson
+admin.site.register(Parkinson_1_GSE7621, Parkinson_1_GSE7621_Admin)
+admin.site.register(Parkinson_1_GSE7621_Metadata, Parkinson_1_GSE7621_Metadata_Admin)
+admin.site.register(Parkinson_2_GSE8397_U133A, Parkinson_2_GSE8397_U133A_Admin)
+admin.site.register(Parkinson_2_GSE8397_U133A_Metadata, Parkinson_2_GSE8397_U133A_Metadata_Admin)
+admin.site.register(Parkinson_3_GSE8397_U133B, Parkinson_3_GSE8397_U133B_Admin)
+admin.site.register(Parkinson_3_GSE8397_U133B_Metadata, Parkinson_3_GSE8397_U133B_Metadata_Admin)
+admin.site.register(Parkinson_4_GSE19587, Parkinson_4_GSE19587_Admin)
+admin.site.register(Parkinson_4_GSE19587_Metadata, Parkinson_4_GSE19587_Metadata_Admin)
+admin.site.register(Parkinson_5_GSE20141, Parkinson_5_GSE20141_Admin)
+admin.site.register(Parkinson_5_GSE20141_Metadata, Parkinson_5_GSE20141_Metadata_Admin)
+admin.site.register(Parkinson_6_GSE20146, Parkinson_6_GSE20146_Admin)
+admin.site.register(Parkinson_6_GSE20146_Metadata, Parkinson_6_GSE20146_Metadata_Admin)
+admin.site.register(Parkinson_7_GSE20163, Parkinson_7_GSE20163_Admin)
+admin.site.register(Parkinson_7_GSE20163_Metadata, Parkinson_7_GSE20163_Metadata_Admin)
+admin.site.register(Parkinson_8_GSE20164, Parkinson_8_GSE20164_Admin)
+admin.site.register(Parkinson_8_GSE20164_Metadata, Parkinson_8_GSE20164_Metadata_Admin)
+admin.site.register(Parkinson_9_GSE20168, Parkinson_9_GSE20168_Admin)
+admin.site.register(Parkinson_9_GSE20168_Metadata, Parkinson_9_GSE20168_Metadata_Admin)
+admin.site.register(Parkinson_10_GSE20291, Parkinson_10_GSE20291_Admin)
+admin.site.register(Parkinson_10_GSE20291_Metadata, Parkinson_10_GSE20291_Metadata_Admin)
+admin.site.register(Parkinson_11_GSE20292, Parkinson_11_GSE20292_Admin)
+admin.site.register(Parkinson_11_GSE20292_Metadata, Parkinson_11_GSE20292_Metadata_Admin)
+admin.site.register(Parkinson_12_GSE20314, Parkinson_12_GSE20314_Admin)
+admin.site.register(Parkinson_12_GSE20314_Metadata, Parkinson_12_GSE20314_Metadata_Admin)
+admin.site.register(Parkinson_13_GSE20333, Parkinson_13_GSE20333_Admin)
+admin.site.register(Parkinson_13_GSE20333_Metadata, Parkinson_13_GSE20333_Metadata_Admin)
+admin.site.register(Parkinson_14_GSE24378, Parkinson_14_GSE24378_Admin)
+admin.site.register(Parkinson_14_GSE24378_Metadata, Parkinson_14_GSE24378_Metadata_Admin)
+
+# pituitary adenoma
+admin.site.register(Pituitary_1_GSE36314, Pituitary_1_GSE36314_Admin)
+admin.site.register(Pituitary_1_GSE36314_Metadata, Pituitary_1_GSE36314_Metadata_Admin)
+
+
+
