@@ -71,6 +71,8 @@ def get_objects(disease, proteinId):
 # and a list of objects as second value
 
 def get_metadata_objects(disease):
+    groupIchoices = ["Control", "Disease"]
+
     if disease == 'meningioma':
         try:
             dataset_1 = Meningioma_1_PXD007073_Metadata.objects.all().order_by('sampleId')
@@ -91,10 +93,28 @@ def get_metadata_objects(disease):
                                                                 ),
                                                         exclude=True
                                                         )
-
+        groupIIchoices = ['Control', 'Grade 1', 'Grade 2','Grade 3']
+        groupIIIchoices = [
+        'Anaplastic',
+        'Atypical',
+        'Fibroplastic',
+        'Meningothelial',
+        'Transitional'
+        ]
+        groupIVchoices = [
+        'Brain Stem',
+        'Frontal',
+        'Lateral posterior fossa',
+        'Occipital',
+        'Olfactory groove',
+        'Parafalcine',
+        'Parasagittal',
+        'Parietal',
+        'Sphenoid wing'
+        ]
         return (2,[
-                    {'studyId': 'PXD007073', 'data': serialized_dataset_1.data},
-                    {'studyId': 'PXD014852', 'data': serialized_dataset_2.data},
+                    {'studyId': 'PXD007073','numGroups': 4, 'groupChoices': [groupIchoices, groupIIchoices, groupIIIchoices, groupIVchoices], 'data': serialized_dataset_1.data},
+                    {'studyId': 'PXD014852','numGroups': 2, 'groupChoices': [groupIchoices, groupIIchoices], 'data': serialized_dataset_2.data},
                     ]
                 )
     else:

@@ -5,5 +5,11 @@ from . import views
 app_name = 'bdmc'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+
+    # Single Entity, Paticular Disease, all data
+    path('api/bdmc/genes/<str:geneName>/disease/<str:disease>', views.single_gene_single_disease, name='single_protein_single_disease'),
+    
+    # Single Entity, All Data 
+    path('api/bdmc/genes/<str:geneName>', views.single_gene_all_data, name='single_protein_all_data'),
+
 ]

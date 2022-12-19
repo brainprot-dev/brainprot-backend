@@ -18,7 +18,7 @@ class Meningioma_1_GSE43290_Metadata_Serializer(DynamicFieldsModelSerializer):
 
     class Meta:
         model = Meningioma_1_GSE43290_Metadata
-        fields = '__all__' #Shortcut to add all fields
+        fields = ('accession', 'sampleId', 'title', 'sourceName', 'gender', 'groupInformation')
 
 class Meningioma_2_GSE54934_Serializer(DynamicFieldsModelSerializer):
     class Meta:
@@ -36,4 +36,4 @@ class Meningioma_2_GSE54934_Metadata_Serializer(DynamicFieldsModelSerializer):
 
     class Meta:
         model = Meningioma_2_GSE54934_Metadata
-        fields = '__all__' #Shortcut to add all fields
+        fields = ('accession', 'sampleId', 'title', 'sourceName', 'gender', 'groupInformation')
