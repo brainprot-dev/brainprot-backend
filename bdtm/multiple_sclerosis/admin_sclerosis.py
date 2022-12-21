@@ -105,7 +105,7 @@ class Multiple_Sclerosis_2_GSE52139_Metadata_Admin(ImportExportMixin, admin.Mode
     # For ImportExportMixin Interface, we set what resource class it deals with
     resource_class = Multiple_Sclerosis_2_GSE52139_Metadata_Resource
 
-    list_display = ('accession','sampleId', 'gender', 'groupI')
+    list_display = ('accession','sampleId', 'gender', 'age', 'groupI')
     list_filter = ('gender', 'groupI')
     search_fields = ['accession']
 
