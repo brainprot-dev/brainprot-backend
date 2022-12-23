@@ -82,26 +82,43 @@ def get_metadata_objects(disease):
             dataset_2 = Meningioma_2_PXD014852_Metadata.objects.all().order_by('sampleId')
         except:
             dataset_2 = None
+        try:
+            dataset_3 = Meningioma_3_PXD012923_Metadata.objects.all().order_by('sampleId')
+        except:
+            dataset_3 = None
 
         serialized_dataset_1 = Meningioma_1_PXD007073_Metadata_Serializer(dataset_1,
                                                         fields=(
                                                                 ),
+                                                        many=True,
                                                         exclude=True
                                                         )
         serialized_dataset_2 = Meningioma_2_PXD014852_Metadata_Serializer(dataset_2,
                                                         fields=(
                                                                 ),
+                                                        many=True,
+                                                        exclude=True
+                                                        )
+        serialized_dataset_3 = Meningioma_3_PXD012923_Metadata_Serializer(dataset_3,
+                                                        fields=(
+                                                                ),
+                                                        many=True,
                                                         exclude=True
                                                         )
         groupIIchoices = ['Control', 'Grade 1', 'Grade 2','Grade 3']
-        groupIIIchoices = [
+        groupIIIchoices_PXD007073 = [
         'Anaplastic',
         'Atypical',
         'Fibroplastic',
         'Meningothelial',
         'Transitional'
         ]
-        groupIVchoices = [
+        groupIIIchoices_PXD012923 = [
+            'Skull Base',
+            'Convexity',
+            'Other'
+        ]
+        groupIVchoices_PXD007073 = [
         'Brain Stem',
         'Frontal',
         'Lateral posterior fossa',
@@ -112,9 +129,15 @@ def get_metadata_objects(disease):
         'Parietal',
         'Sphenoid wing'
         ]
-        return (2,[
-                    {'studyId': 'PXD007073','numGroups': 4, 'groupChoices': [groupIchoices, groupIIchoices, groupIIIchoices, groupIVchoices], 'data': serialized_dataset_1.data},
+        groupIVchoices_PXD012923 = [
+            'Primary',
+            'Recurrence 1st',
+            'Recurrence 2nd'
+        ]
+        return (3,[
+                    {'studyId': 'PXD007073','numGroups': 4, 'groupChoices': [groupIchoices, groupIIchoices, groupIIIchoices_PXD007073, groupIVchoices_PXD007073], 'data': serialized_dataset_1.data},
                     {'studyId': 'PXD014852','numGroups': 2, 'groupChoices': [groupIchoices, groupIIchoices], 'data': serialized_dataset_2.data},
+                    {'studyId': 'PXD012923','numGroups': 4, 'groupChoices': [groupIchoices, groupIIchoices, groupIIIchoices_PXD012923, groupIVchoices_PXD012923], 'data': serialized_dataset_3.data},
                     ]
                 )
     else:

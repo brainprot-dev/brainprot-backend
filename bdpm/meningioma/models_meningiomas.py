@@ -23,20 +23,20 @@ from django.db import models
 # # # # # # # # # # # # # # # # # # # 
 
 GENDERS = (
-        ("0", 'Male'),
-        ("1", 'Female'),
+        (0, 'Male'),
+        (1, 'Female'),
     )
 
 GROUP_I_CHOICES = (
-        ("0", 'Control'),
-        ("1", 'Disease'),
+        (0, 'Control'),
+        (1, 'Disease'),
     )
 
 MENINGIOMA_GRADES = (
-        ("0", 'Control'),
-        ("1", 'Grade 1'),
-        ("2", 'Grade 2'),
-        ("3", 'Grade 3'),
+        (0, 'Control'),
+        (1, 'Grade 1'),
+        (2, 'Grade 2'),
+        (3, 'Grade 3'),
     )
 
 # # # # # # # # # # # # # # # # # # # 
@@ -186,3 +186,122 @@ class Meningioma_2_PXD014852_Metadata(models.Model):
     )
     groupI = models.IntegerField(choices=GROUP_I_CHOICES)
     groupII = models.IntegerField(choices=MENINGIOMA_GRADES)
+
+
+# # # # # # # # # # # # # # # # # # # 
+# Meningioma 3
+# # # # # # # # # # # # # # # # # # # 
+
+class Meningioma_3_PXD012923(models.Model):
+    proteinId = models.CharField(
+        max_length=200,
+        help_text="UniProt Protein ID",
+        verbose_name="Protein ID",
+        default='',
+    )
+    S1 = models.FloatField()
+    S2 = models.FloatField()
+    S3 = models.FloatField()
+    S4 = models.FloatField()
+    S5 = models.FloatField()
+    S6 = models.FloatField()
+    S7 = models.FloatField()
+    S8 = models.FloatField()
+    S9 = models.FloatField()
+    S10 = models.FloatField()
+    S11 = models.FloatField()
+    S12 = models.FloatField()
+    S13 = models.FloatField()
+    S14 = models.FloatField()
+    S15 = models.FloatField()
+    S16 = models.FloatField()
+    S17 = models.FloatField()
+    S18 = models.FloatField()
+    S19 = models.FloatField()
+    S20 = models.FloatField()
+    S21 = models.FloatField()
+    S22 = models.FloatField()
+    S23 = models.FloatField()
+    S24 = models.FloatField()
+    S25 = models.FloatField()
+    S26 = models.FloatField()
+    S27 = models.FloatField()
+    S28 = models.FloatField()
+    S29 = models.FloatField()
+    S30 = models.FloatField()
+    S31 = models.FloatField()
+    S32 = models.FloatField()
+    S33 = models.FloatField()
+    S34 = models.FloatField()
+    S35 = models.FloatField()
+    S36 = models.FloatField()
+    S37 = models.FloatField()
+    S38 = models.FloatField()
+    S39 = models.FloatField()
+    S40 = models.FloatField()
+    S41 = models.FloatField()
+    S42 = models.FloatField()
+    S43 = models.FloatField()
+    S44 = models.FloatField()
+    S45 = models.FloatField()
+    S46 = models.FloatField()
+    S47 = models.FloatField()
+    S48 = models.FloatField()
+    S49 = models.FloatField()
+    S50 = models.FloatField()
+    S51 = models.FloatField()
+    S52 = models.FloatField()
+    S53 = models.FloatField()
+    S54 = models.FloatField()
+    S55 = models.FloatField()
+    S56 = models.FloatField()
+    S57 = models.FloatField()
+    S58 = models.FloatField()
+    S59 = models.FloatField()
+    S60 = models.FloatField()
+    S61 = models.FloatField()
+    S62 = models.FloatField()
+    S63 = models.FloatField()
+    S64 = models.FloatField()
+    S65 = models.FloatField()
+
+class Meningioma_3_PXD012923_Metadata(models.Model):
+    GROUP_II_CHOICES = (
+        (0, 'Control'),
+        (1, 'Grade I'),
+        (2, 'Grade II'),
+        (3, 'Grade III'),
+    )
+    GROUP_III_CHOICES = (
+        (0, 'Skull Base'),
+        (1, 'Convexity'),
+        (2, 'Other'),
+    )
+    GROUP_IV_CHOICES = (
+        (0, 'Primary'),
+        (1, 'Recurrence 1st'),
+        (2, 'Recurrence 2nd'),
+    )
+    sourceName = models.TextField(
+        help_text="Name of Source File",
+        verbose_name="Source Name"
+    )
+    sampleId = models.CharField(
+        max_length=50,
+        help_text="The Sample ID",
+        verbose_name="Sample ID",
+    )
+    sampleName = models.TextField(
+        help_text="Name of Sample",
+        verbose_name="Sample Name"
+    )
+    gender = models.IntegerField(choices=GENDERS, null=True)
+    age = models.IntegerField(
+        help_text="Age of Patient",
+        verbose_name="Age",
+        null=True,
+    )
+    groupI = models.IntegerField(choices=GROUP_I_CHOICES, null=True)
+    groupII = models.IntegerField(choices=GROUP_II_CHOICES, null=True)
+    groupIII = models.IntegerField(choices=GROUP_III_CHOICES, null=True)
+    groupIV = models.IntegerField(choices=GROUP_IV_CHOICES, null=True)
