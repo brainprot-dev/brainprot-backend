@@ -12,4 +12,5 @@ urlpatterns = [
     # Single Entity, All Data 
     path('api/bdmc/genes/<str:geneName>', views.single_gene_all_data, name='single_protein_all_data'),
 
+    path('api/bdmc/disease/<str:disease>', views.single_disease_all_gene, name='single_disease_all_gene'),
 ]

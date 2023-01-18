@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'bdpm.apps.BdpmConfig',
     'bdmc.apps.BdmcConfig',
     'bddf.apps.BddfConfig',
-    'hbdn.apps.HbdnConfig',
+    'hbda.apps.HbdaConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',

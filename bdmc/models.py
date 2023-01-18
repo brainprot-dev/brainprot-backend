@@ -9,10 +9,14 @@ class Alzheimer(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Amyotrophic_Lateral_Sclerosis(models.Model):
     geneName = models.CharField(
@@ -21,10 +25,14 @@ class Amyotrophic_Lateral_Sclerosis(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Meningioma(models.Model):
     geneName = models.CharField(
@@ -33,10 +41,14 @@ class Meningioma(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Glioma(models.Model):
     geneName = models.CharField(
@@ -45,10 +57,14 @@ class Glioma(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Glioblastoma(models.Model):
     geneName = models.CharField(
@@ -57,10 +73,14 @@ class Glioblastoma(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Medulloblastoma(models.Model):
     geneName = models.CharField(
@@ -69,10 +89,14 @@ class Medulloblastoma(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Pituitary_Adenoma(models.Model):
     geneName = models.CharField(
@@ -81,10 +105,14 @@ class Pituitary_Adenoma(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Parkinson(models.Model):
     geneName = models.CharField(
@@ -93,10 +121,14 @@ class Parkinson(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Huntington(models.Model):
     geneName = models.CharField(
@@ -105,10 +137,14 @@ class Huntington(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Multiple_Sclerosis(models.Model):
     geneName = models.CharField(
@@ -117,10 +153,14 @@ class Multiple_Sclerosis(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)
 
 class Frontotemporal(models.Model):
     geneName = models.CharField(
@@ -129,7 +169,11 @@ class Frontotemporal(models.Model):
         verbose_name="Gene Name",
         default='',
     )
-    DISGENET_Score = models.FloatField()
-    Pubpular_Score = models.FloatField()
-    Harmonizome_Score = models.FloatField()
-    Bionda_Score = models.FloatField()
+    DISGENET_Score = models.FloatField(null=True)
+    Pubpular_Score = models.FloatField(null=True)
+    Harmonizome_Score = models.FloatField(null=True)
+    Bionda_Score = models.FloatField(null=True)
+    Unscaled_DISGENET_Score = models.FloatField(null=True)
+    Unscaled_Pubpular_Score = models.FloatField(null=True)
+    Unscaled_Harmonizome_Score = models.FloatField(null=True)
+    Unscaled_Bionda_Score = models.FloatField(null=True)

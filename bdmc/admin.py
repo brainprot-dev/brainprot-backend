@@ -10,7 +10,7 @@ class ALS_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Amyotrophic_Lateral_Sclerosis
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -29,7 +29,7 @@ class Alzheimer_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Alzheimer
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -48,7 +48,7 @@ class Meningioma_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Meningioma
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -67,7 +67,7 @@ class Glioma_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Glioma
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -86,7 +86,7 @@ class Glioblastoma_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Glioblastoma
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -105,7 +105,7 @@ class Medulloblastoma_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Medulloblastoma
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -124,7 +124,7 @@ class Pituitary_Adenoma_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Pituitary_Adenoma
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -143,7 +143,7 @@ class Parkinson_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Parkinson
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -162,7 +162,7 @@ class Huntington_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Huntington
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -181,7 +181,7 @@ class Multiple_Sclerosis_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Multiple_Sclerosis
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries
@@ -200,7 +200,7 @@ class Frontotemporal_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Frontotemporal
         # Fields useful for import and export
-        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score')
+        fields = ('geneName', 'DISGENET_Score', 'Pubpular_Score', 'Harmonizome_Score', 'Bionda_Score', 'Unscaled_DISGENET_Score', 'Unscaled_Pubpular_Score', 'Unscaled_Harmonizome_Score', 'Unscaled_Bionda_Score')
         # Fields which will be useful for object identification during import
         import_id_fields = ('geneName',)
         # This will allow to skip unchanged entries

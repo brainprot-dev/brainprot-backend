@@ -37,5 +37,5 @@ urlpatterns = [
     path('',include(('bdpm.urls', 'bdpm'), namespace='bdpm')),
     path('',include(('bdmc.urls', 'bdmc'), namespace='bdmc')),
     path('',include(('bddf.urls', 'bddf'), namespace='bddf')),
-    path('',include(('hbdn.urls', 'hbdn'), namespace='hbdn')),
+    path('',include(('hbda.urls', 'hbda'), namespace='hbda')),
 ]
