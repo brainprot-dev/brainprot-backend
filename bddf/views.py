@@ -17,7 +17,7 @@ import json
 # Reference :- https://towardsdatascience.com/adding-timeouts-to-functions-using-wrapt-timeout-decorator-21790890a49b
 from wrapt_timeout_decorator import *
 
-@timeout(30)
+@timeout(60)
 def chembl_uniprot(uniprotId):
     # Step 1: Targets API
     targets_api = new_client.target
@@ -101,8 +101,7 @@ def get_protein_data(request, uniprotId):
     try: 
         return chembl_uniprot(uniprotId)
     except:
-        return JsonResponse({'message': f'The Uniprot ID: "{uniprotId}" does not exist in BDDF Database or the query is malformed. Please refer to https://brainprot.org/api for help.'},
-                            status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse({'message': f'The Uniprot ID: "{uniprotId}" does not exist in BDDF Database or the query is malformed. Please refer to https://brainprot.org/api for help.'})
 
 @api_view(['GET'])
 def chembl_disease(request, diseaseId):

@@ -17,9 +17,9 @@ class Disease_Resource(resources.ModelResource):
         # Controls which Model this resource is for
         model = Disease
         # Fields useful for import and export
-        fields = ('diseaseName', 'DisGeNetDiseaseId', 'numGeneDisGeNet', 'numGeneHarmonizome',)
+        fields = ('diseaseName', 'DisGeNETDiseaseId', 'numGeneDisGeNET', 'numGeneHarmonizome', 'includeInBDDF', 'HarmonizomeQueryTerm')
         # Fields which will be useful for object identification during import
-        import_id_fields = ('DisGeNetDiseaseId',)
+        import_id_fields = ('DisGeNETDiseaseId',)
         # This will allow to skip unchanged entries
         skip_unchanged = True
         # This will report the skipped rows in Admin integration Preview page
@@ -30,7 +30,7 @@ class Disease_Admin(ImportExportMixin, admin.ModelAdmin):
     resource_class = Disease_Resource
 
     list_display = ('diseaseName',)
-    search_fields = ['diseaseName', 'DisGeNetDiseaseId']
+    search_fields = ['diseaseName', 'DisGeNETDiseaseId']
     #prepopulated_fields = {'diseaseSlug': ('diseaseName',)}
 
 

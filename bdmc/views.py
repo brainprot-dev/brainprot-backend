@@ -42,7 +42,7 @@ def get_objects(disease, geneName):
                                                     )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
 
     elif disease == 'alzheimer':
@@ -59,7 +59,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'ftld':
         try:
@@ -75,7 +75,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'glioblastoma':
         try:
@@ -91,7 +91,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'glioma':
         try:
@@ -107,7 +107,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'huntington':
         try:
@@ -123,7 +123,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'medulloblastoma':
         try:
@@ -139,7 +139,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'meningioma':
         try:
@@ -155,7 +155,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'multiple_sclerosis':
         try:
@@ -171,7 +171,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'parkinson':
         try:
@@ -187,7 +187,7 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
     elif disease == 'pituitary_adenoma':
         try:
@@ -203,9 +203,153 @@ def get_objects(disease, geneName):
                                                         )
 
         return (
-                    {'Scores': serialized_dataset.data},
+                    {'scores': serialized_dataset.data},
                 )
-    
+
+def get_genes(disease):
+    if disease == 'als':
+        try:
+            dataset = Amyotrophic_Lateral_Sclerosis.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = AmyotrophicSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+        
+    elif disease == 'alzheimer':
+        try:
+            dataset = Alzheimer.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = AlzheimerSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'ftld':
+        try:
+            dataset = Frontotemporal.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = FrontotemporalSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'glioblastoma':
+        try:
+            dataset = Glioblastoma.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = GlioblastomaSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'glioma':
+        try:
+            dataset = Glioma.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = GliomaSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'huntington':
+        try:
+            dataset = Huntington.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = HuntingtonSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'medulloblastoma':
+        try:
+            dataset = Medulloblastoma.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = MedulloblastomaSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'meningioma':
+        try:
+            dataset = Meningioma.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = MeningiomaSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'multiple_sclerosis':
+        try:
+            dataset = Multiple_Sclerosis.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = MultipleSclerosisSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'parkinson':
+        try:
+            dataset = Parkinson.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = ParkinsonSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
+    elif disease == 'pituitary_adenoma':
+        try:
+            dataset = Pituitary_Adenoma.objects.all()
+        except:
+            dataset = None
+        serialized_dataset = PituitaryAdenomaSerializer(dataset,
+                                                    fields=(
+                                                            'id'
+                                                            ),
+                                                    exclude=True,
+                                                    many=True)
+        return serialized_dataset.data
+
 @api_view(['GET'])
 def single_gene_single_disease(request, geneName, disease):
     geneName = geneName.upper()
@@ -217,8 +361,6 @@ def single_gene_single_disease(request, geneName, disease):
         return JsonResponse({'message': f'The disease: "{disease}" does not exist in BDMC Database or the query is malformed. Please refer to https://brainprot.org/api for help.'},
                             status=status.HTTP_404_NOT_FOUND)
 
-
-
 @api_view(['GET'])
 def single_gene_all_data(request, geneName):
     data_list = []
@@ -228,3 +370,13 @@ def single_gene_all_data(request, geneName):
         data_list.append({'disease': disease, 'diseaseData': data})
     
     return JsonResponse({'geneName': geneName, 'data': data_list})
+
+@api_view(['GET'])
+def single_disease_all_gene(request, disease):
+    disease = disease.lower()
+    if disease in disease_list:
+        data = get_genes(disease=disease)
+        return JsonResponse({'disease': disease, 'geneList': data})
+    else:
+        return JsonResponse({'message': f'The disease: "{disease}" does not exist in BDMC Database or the query is malformed. Please refer to https://brainprot.org/api for help.'},
+                            status=status.HTTP_404_NOT_FOUND)

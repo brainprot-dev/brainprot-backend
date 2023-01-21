@@ -34,11 +34,10 @@ def getDisgenetData(disease_object):
 
     disgenet_api_key = env("DISGENET_API_KEY")
 
-    disease_name = disease_object.diseaseName
+    harmonizome_query_term = disease_object.HarmonizomeQueryTerm
 
-    harmonizome_url_string = 'https://maayanlab.cloud/Harmonizome/api/1.0/gene_set/' + urllib.parse.quote_plus(disease_name) + '/DISEASES+Text-mining+Gene-Disease+Assocation+Evidence+Scores'
-    disgenet_url_string = api_host + f'/gda/disease/{disease_object.DisGeNetDiseaseId}'
-
+    harmonizome_url_string = 'https://maayanlab.cloud/Harmonizome/api/1.0/gene_set/' + urllib.parse.quote_plus(harmonizome_query_term) + '/DISEASES+Text-mining+Gene-Disease+Assocation+Evidence+Scores'
+    disgenet_url_string = api_host + f'/gda/disease/{disease_object.DisGeNETDiseaseId}'
     if disgenet_api_key and disease_object:
         #Get Harmonizome Data
         harmonizome_response = requests.get(harmonizome_url_string)
@@ -95,9 +94,9 @@ def getDisgenetData(disease_object):
 
     normalized_common_df = pd.DataFrame(common_gene_data, columns=['geneName', 'normalizedGDAScore', 'normalizedHarmonizomeScore'])
     
-    normalized_disgenet_df.to_csv(HBDA_CACHE_DIR + "/" + f'{disease_object.DisGeNetDiseaseId}_disgenet.csv', index=False)
-    normalized_harmonizome_df.to_csv(HBDA_CACHE_DIR + "/" + f'{disease_object.DisGeNetDiseaseId}_harmonizome.csv', index=False)
-    normalized_common_df.to_csv(HBDA_CACHE_DIR + "/" + f'{disease_object.DisGeNetDiseaseId}_common.csv', index=False)
+    normalized_disgenet_df.to_csv(HBDA_CACHE_DIR + "/" + f'{disease_object.DisGeNETDiseaseId}_disgenet.csv', index=False)
+    normalized_harmonizome_df.to_csv(HBDA_CACHE_DIR + "/" + f'{disease_object.DisGeNETDiseaseId}_harmonizome.csv', index=False)
+    normalized_common_df.to_csv(HBDA_CACHE_DIR + "/" + f'{disease_object.DisGeNETDiseaseId}_common.csv', index=False)
 
 
 
@@ -106,11 +105,16 @@ def getDisgenetData(disease_object):
 @api_view(['GET'])
 def get_disease_data(request, diseaseId):
     try:
-        disease_object = Disease.objects.get(DisGeNetDiseaseId=diseaseId)
+        disease_object = Disease.objects.get(DisGeNETDiseaseId=diseaseId)
     except:
         disease_object = None
         return JsonResponse({'message': f'The disease ID: "{diseaseId}" does not exist in HBDA Database or the query is malformed. Please refer to https://brainprot.org/api for help.'},
                             status=status.HTTP_404_NOT_FOUND)
+    if (not disease_object.includeInBDDF):
+        return JsonResponse({'message': f'The disease ID: "{diseaseId}" does not exist in HBDA Database or the query is malformed. Please refer to https://brainprot.org/api for help.'},
+                            status=status.HTTP_404_NOT_FOUND)
+    else:
+        pass
     try:
         harmonizome_disease_processed_dataset = pd.read_csv(HBDA_CACHE_DIR + "/" + f'{diseaseId}_harmonizome.csv')
         disgenet_disease_processed_dataset = pd.read_csv(HBDA_CACHE_DIR + "/" + f'{diseaseId}_disgenet.csv')
@@ -125,7 +129,7 @@ def get_disease_data(request, diseaseId):
     disgenet_data = disgenet_disease_processed_dataset.to_dict('records')
     harmonizome_data = harmonizome_disease_processed_dataset.to_dict('records')
 
-    return JsonResponse({'diseaseName': disease_object.diseaseName, 'diseaseId': disease_object.DisGeNetDiseaseId, 'data': {'disgenetData': disgenet_data, 'harmonizomeData': harmonizome_data, 'commonData': common_data}})
+    return JsonResponse({'diseaseName': disease_object.diseaseName, 'diseaseId': disease_object.DisGeNETDiseaseId, 'data': {'disgenetData': disgenet_data, 'harmonizomeData': harmonizome_data, 'commonData': common_data}})
 
     
 @api_view(['GET'])
@@ -144,7 +148,7 @@ def delete_hbda_cache(request):
 
 @api_view(['GET'])
 def get_disease_table(request):
-    all_disease_objects = Disease.objects.all().order_by('diseaseName')
+    all_disease_objects = Disease.objects.filter(includeInBDDF=True).order_by('diseaseName')
 
     serialized_disease_objects = DiseaseSerializer(all_disease_objects,
                                                     fields=(),
