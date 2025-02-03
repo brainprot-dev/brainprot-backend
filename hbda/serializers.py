@@ -6,4 +6,4 @@ class DiseaseSerializer(DynamicFieldsModelSerializer):
 
     class Meta:
         model = Disease
-        fields = ('diseaseName', 'DisGeNETDiseaseId', 'numGeneDisGeNET', 'numGeneHarmonizome',)
+        fields =('diseaseName', 'MESHID', 'umlsId', 'diseaseOntology', 'NCI', 'GARD', 'KEGG', 'HPO', 'monarchInitiative', 'MedGenUID', 'orphanet', 'OMIM', 'description')

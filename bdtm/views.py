@@ -14,6 +14,7 @@ from .meningioma.models_meningiomas import *
 from .multiple_sclerosis.models_sclerosis import *
 from .parkinson.models_parkinson import *
 from .pituitary_adenoma.models_pituitary import *
+from .pvalue.models_pvalue import *
 
 # All Serializers
 from .als.serializers_als import *
@@ -27,6 +28,7 @@ from .meningioma.serializers_meningiomas import *
 from .multiple_sclerosis.serializers_sclerosis import *
 from .parkinson.serializers_parkinson import *
 from .pituitary_adenoma.serializers_pituitary import *
+from .pvalue.serializers_pvalue import *
 
 #For Faster Concatenating of Lists
 from itertools import chain 
@@ -1007,4 +1009,15 @@ def single_protein_all_data(request, geneName):
         data_list.append({'disease': disease, 'diseaseData': data, 'diseaseMetadata':metadata})
     
     return JsonResponse({'geneName': geneName, 'data': data_list})
+
+
+@api_view(['GET'])
+def single_gene_pvalue(request, geneName):
+    geneName = geneName.upper()
+    try:
+        dataset = P_Value.objects.filter(geneName=geneName)
+    except:
+        dataset = None
+    serialized_dataset = P_Value_Serializer(dataset, many=True)
+    return JsonResponse({'geneName': geneName, 'data': serialized_dataset.data})
 

@@ -16,4 +16,6 @@ urlpatterns = [
     # Single Disease All Metadata
     path('api/bdtm/metadata/<str:disease>', views.disease_metadata, name='disease_metadata'),
 
+    # Single Gene, Pvalue for studies
+    path('api/bdtm/pvalue/<str:geneName>', views.single_gene_pvalue, name = 'single_gene_pvalue')
 ]

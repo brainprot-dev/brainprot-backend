@@ -9,29 +9,89 @@ class Disease(models.Model):
         help_text="Name of the Disease",
         verbose_name="Disease Name"
     )
-    HarmonizomeQueryTerm = models.CharField(
-        max_length=500,
-        default='',
-        help_text="Name of Disease for Harmonizome",
-        verbose_name="Disease Name for Harmonizome",
-        null=True
-    )
-    DisGeNETDiseaseId = models.CharField(
+    MESHID = models.CharField(
         max_length=100,
         default='',
-        help_text="DisGeNet Disease ID",
-        verbose_name="DisGeNet Disease ID"
+        help_text="MESH ID",
+        verbose_name="MESH ID"
     )
-    numGeneDisGeNET = models.PositiveIntegerField(
-        help_text="Number of Genes (DisGeNet)",
-        verbose_name="No. of Genes (DisGeNet)",
-    )
-    numGeneHarmonizome = models.PositiveIntegerField(
-        help_text="Number of Genes (Harmonizome)",
-        verbose_name="No. of Genes (Harmonizome)",
+    umlsId = models.CharField(
+        max_length=100,
+        default='',
+        help_text="UMLS",
+        verbose_name="UMLS",
         null=True
     )
-    includeInBDDF = models.BooleanField(default=True)
-    
+    diseaseOntology = models.CharField(
+        max_length=100,
+        default='',
+        help_text="Disease Ontology",
+        verbose_name="Disease Ontology",
+        null=True
+    )
+    NCI = models.CharField(
+        max_length=100,
+        default='',
+        help_text="NCI",
+        verbose_name="NCI",
+        null=True
+    )
+    GARD = models.CharField(
+        max_length=100,
+        default='',
+        help_text="GARD",
+        verbose_name="GARD",
+        null=True
+    )
+    KEGG = models.CharField(
+        max_length=100,
+        default='',
+        help_text="KEGG",
+        verbose_name="KEGG",
+        null=True
+    )
+    HPO = models.CharField(
+        max_length=100,
+        default='',
+        help_text="HPO",
+        verbose_name="HPO",
+        null=True
+    )
+    monarchInitiative = models.CharField(
+        max_length=100,
+        default='',
+        help_text="Monarch Initiative",
+        verbose_name="Monarch Initiative",
+        null=True
+    )
+    MedGenUID = models.CharField(
+        max_length=100,
+        default='',
+        help_text="MedGen UID",
+        verbose_name="MedGen UID",
+        null=True
+    )
+    orphanet = models.CharField(
+        max_length=100,
+        default='',
+        help_text = "Orphanet",
+        verbose_name = "Orphanet",
+        null=True
+    )
+    OMIM = models.CharField(
+        max_length=100,
+        default='',
+        help_text = "OMIM",
+        verbose_name = "OMIM",
+        null=True
+    )
+    description = models.CharField(
+        max_length=5000,
+        default='',
+        help_text = "Disease Description",
+        verbose_name = "Description",
+        null=True
+    )
+
     def __str__(self):
         return self.diseaseName
