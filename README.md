@@ -103,5 +103,7 @@ For questions or support, please contact the BrainProt development team at [supp
 Please cite BrainProt Manuscript-
 
 For IBPM (BrainProt v1.0): https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.1c00511
+
 For PhosphoMap (BrainProt v2.0): https://pubmed.ncbi.nlm.nih.gov/36317652/
+
 For BrainProt v3.0: https://www.biorxiv.org/content/10.1101/2023.06.21.545851v1.full
