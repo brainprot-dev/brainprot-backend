@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.indexes import GinIndex
 
 # Create your models here.
 # TODO: Standardize Names!!
@@ -33,6 +34,7 @@ class GeneProt(models.Model):
         ("M", 'Mitochondrion'),
         ("NA", 'Not Applicable'),
     )
+    
     protName = models.CharField(
         max_length=100,
         help_text="The Protein Name",
@@ -47,7 +49,7 @@ class GeneProt(models.Model):
     geneName = models.CharField(
         max_length=200,
         default='',
-        help_text="Abbrievated Name of the Gene",
+        help_text="Abbreviated Name of the Gene",
         verbose_name="Gene Name",
         blank=True
     )
@@ -75,7 +77,42 @@ class GeneProt(models.Model):
         verbose_name="Protein Mass",
         null=True
     )
-
+    
+    class Meta:
+        indexes = [
+            # Regular indexes
+            models.Index(fields=['geneName']),
+            models.Index(fields=['protName']),
+            models.Index(fields=['entryName']),
+            
+            # GIN indexes for trigram search - these will work now!
+            GinIndex(
+                fields=['geneName'],
+                name='geneprot_genename_gin',
+                opclasses=['gin_trgm_ops']
+            ),
+            GinIndex(
+                fields=['protName'],
+                name='geneprot_protname_gin', 
+                opclasses=['gin_trgm_ops']
+            ),
+            GinIndex(
+                fields=['entryName'],
+                name='geneprot_entryname_gin',
+                opclasses=['gin_trgm_ops']
+            ),
+            GinIndex(
+                fields=['altGeneNames'],
+                name='geneprot_altnames_gin',
+                opclasses=['gin_trgm_ops']
+            ),
+            GinIndex(
+                fields=['geneProtFullNames'],
+                name='geneprot_fullnames_gin',
+                opclasses=['gin_trgm_ops']
+            ),
+        ]
+    
     def __str__(self):
         return self.protName
 

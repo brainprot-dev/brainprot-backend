@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'corsheaders', # CORS
     'rest_framework', # REST Framework
     'import_export', # Import files into Models (django-import-export)
+    'django.contrib.postgres' # For Postgres Search
 ]
 
 MIDDLEWARE = [

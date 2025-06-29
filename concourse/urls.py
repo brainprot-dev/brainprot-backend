@@ -26,5 +26,15 @@ urlpatterns = [
     path('api/posts/drafts', views.post_drafts_list, name='post_drafts_list'),
 
     # Search
-    path('search/<str:query>', views.search, name='search'),
+    # Unified search endpoints
+    path('search/', views.unified_search, name='unified-search'),
+    path('search/simple/', views.simple_unified_search, name='simple-unified-search'),
+    
+    # Legacy support
+    path('search/<str:query>/', views.search, name='search-with-param'),
+
+    #Debug
+    # path('debug-search/', views.debug_search, name='debug-search'),
+    # path('debug-search/<str:query>/', views.debug_search, name='debug-search-with-param'),
+    # path('test-db/', views.test_basic_queries, name='test-db'),
 ]
